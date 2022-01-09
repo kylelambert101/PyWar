@@ -1,6 +1,6 @@
 class Card:
     
-    Symbols = ['1','2','3','4','5','6','7','8','9','10','J','Q','K','A']
+    Symbols = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
 
     def __init__(self,symbol):
         if symbol not in Card.Symbols:
@@ -26,3 +26,5 @@ class Card:
         return self.value > other.value
     def __ge__(self, other):
         return self.value >= other.value
+    def __hash__(self):
+        return hash(repr(self))
