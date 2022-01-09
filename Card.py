@@ -9,7 +9,7 @@ class Card:
         self.value = Card.Symbols.index(symbol)
         
     def __str__(self):
-        return f'[{self.symbol} ({self.value})]'
+        return f'[{self.symbol}]'
     def __repr__(self):
         return str(self)
         

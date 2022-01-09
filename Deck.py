@@ -10,11 +10,14 @@ class Deck:
     def __repr__(self):
         return str(self)
     def pop(self):
+        if self.isEmpty():
+            raise RuntimeError('No more cards')
         return self.cards.pop()
     def popAll(self):
-        tmp = [c for c in self.cards]
-        self.cards = []
-        return tmp
+        tmp = Deck()
+        for i in range(len(self.cards)):
+            tmp.push(self.pop())
+        return tmp.cards
     def push(self,card):
         self.cards.insert(0, card)
     def pushAll(self, cards):
